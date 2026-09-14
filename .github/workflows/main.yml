@@ -1,17 +1,20 @@
+
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main", "master"] # Chạy khi có code mới đấy lên nhánh main hoặc master
+    branches:
+      - main
+      - master
   workflow_dispatch:
-  
+
 permissions:
-contents: read
+  contents: read
   pages: write
   id-token: write
-  
+
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
   
 jobs:
